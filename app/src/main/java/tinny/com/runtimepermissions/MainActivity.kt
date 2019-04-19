@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), PermissionCallBack {
             arrayOf(
                 Manifest.permission.READ_CONTACTS,
                 Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.CALL_PHONE,
                 Manifest.permission.READ_SMS,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
             ), this

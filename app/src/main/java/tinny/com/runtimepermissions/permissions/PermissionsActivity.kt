@@ -28,17 +28,14 @@ class PermissionsActivity : Activity() {
 
         for (permission in _mPermissions) {
             if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
-                if (!checkNeverAskPermission(permission))
-                    _mdNeverAskPermissions.add(permission)
-                else
-                    _mDeniedPermissions.add(permission)
+                _mDeniedPermissions.add(permission)
             } else {
                 _mAcceptedPermissions.add(permission)
             }
         }
         if (_mDeniedPermissions.size != 0) {
             requestPermissions(_mDeniedPermissions.toTypedArray(), PERMISSON_CODE)
-        }else{
+        } else {
             permissionCallBack.onAccepted(_mAcceptedPermissions)
             permissionCallBack.onDenied(_mDeniedPermissions)
             permissionCallBack.onNeverAskPermissions(_mdNeverAskPermissions)
