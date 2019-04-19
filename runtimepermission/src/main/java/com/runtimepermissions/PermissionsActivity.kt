@@ -1,9 +1,8 @@
-package tinny.com.runtimepermissions.permissions
+package com.runtimepermissions
 
 import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import java.util.*
@@ -22,8 +21,8 @@ class PermissionsActivity : Activity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _mPermissions = intent.getStringArrayExtra(CheckPermissions.PERMISSIONS)
-        permissionCallBack = intent.getSerializableExtra(CheckPermissions.CALLBACK) as PermissionCallBack
+        _mPermissions = intent.getStringArrayExtra(PermissionsManager.PERMISSIONS)
+        permissionCallBack = intent.getSerializableExtra(PermissionsManager.CALLBACK) as PermissionCallBack
 
 
         for (permission in _mPermissions) {
@@ -67,14 +66,6 @@ class PermissionsActivity : Activity() {
         permissionCallBack.onDenied(_mDeniedPermissions)
         permissionCallBack.onNeverAskPermissions(_mdNeverAskPermissions)
         finish()
-/*
-        val array = arrayOfNulls<String>(_mAcceptedPermissions.size)
-        permissionCallBack.onAccepted(array)
-
-        val array = arrayOfNulls<String>(_mAcceptedPermissions.size)
-        permissionCallBack.onAccepted(array)
-*/
-
     }
 
     private fun checkNeverAskPermission(permission: String): Boolean {

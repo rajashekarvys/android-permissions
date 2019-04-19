@@ -1,11 +1,10 @@
-package tinny.com.runtimepermissions.permissions
+package com.runtimepermissions
 
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 
-object CheckPermissions {
+object PermissionsManager {
 
     const val PERMISSIONS = "pr"
     const val CALLBACK = "cb"

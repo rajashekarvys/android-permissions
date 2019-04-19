@@ -1,4 +1,4 @@
-package tinny.com.runtimepermissions.permissions
+package com.runtimepermissions
 
 import java.io.Serializable
 

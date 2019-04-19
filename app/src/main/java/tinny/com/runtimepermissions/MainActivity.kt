@@ -4,8 +4,9 @@ import android.Manifest
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import tinny.com.runtimepermissions.permissions.CheckPermissions
-import tinny.com.runtimepermissions.permissions.PermissionCallBack
+import com.runtimepermissions.PermissionsManager
+import com.runtimepermissions.PermissionCallBack
+
 
 class MainActivity : AppCompatActivity(), PermissionCallBack {
 
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity(), PermissionCallBack {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        CheckPermissions.askPermissions(
+        PermissionsManager.askPermissions(
             this,
             arrayOf(
                 Manifest.permission.READ_CONTACTS,
