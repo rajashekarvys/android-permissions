@@ -25,6 +25,7 @@ class PermissionsActivity : Activity() {
         _mPermissions = intent.getStringArrayExtra(CheckPermissions.PERMISSIONS)
         permissionCallBack = intent.getSerializableExtra(CheckPermissions.CALLBACK) as PermissionCallBack
 
+
         for (permission in _mPermissions) {
             if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
                 if (!checkNeverAskPermission(permission))
