@@ -18,6 +18,7 @@ class PermissionsAdapter(var contextNew: Context, var listItems: ArrayList<Dialo
             view = LayoutInflater.from(contextNew).inflate(R.layout.row, parent, false)
         }
 
+
         view!!.permissionIcon.setImageDrawable(listItems[position].icon)
         view!!.permisssionText.text = listItems[position].title
         view!!.permissionDetails.text = listItems[position].description
