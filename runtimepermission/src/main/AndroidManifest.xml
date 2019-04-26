@@ -2,7 +2,8 @@
           package="com.runtimepermissions">
 
     <application>
-        <activity android:name="com.runtimepermissions.PermissionsActivity"/>
+        <activity android:name="com.runtimepermissions.PermissionsActivity"
+        android:theme="@style/TransparentTheme"/>
     </application>
 </manifest>
 

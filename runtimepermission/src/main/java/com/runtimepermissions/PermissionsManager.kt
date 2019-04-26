@@ -2,6 +2,7 @@ package com.runtimepermissions
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 
 object PermissionsManager {
@@ -23,7 +24,12 @@ object PermissionsManager {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             callBack.onAccepted(permissions.toCollection(ArrayList()))
         } else {
-            startPermissionActivity(context, permissions, callBack)
+            for (permission in permissions) {
+                if (context.checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
+                    startPermissionActivity(context, permissions, callBack)
+                    break
+                }
+            }
         }
     }
 

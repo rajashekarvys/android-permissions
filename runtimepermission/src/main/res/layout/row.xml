@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+    <ImageView android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_centerVertical="true"
+               android:id="@+id/permissionIcon"/>
+
+    <TextView
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black"
+            android:maxLength="20"
+            android:ellipsize="end"
+            android:text="jfkkdfgfgfgfgfjfkjdfkjkjdf"
+            android:id="@+id/permisssionText"
+            android:layout_toEndOf="@+id/permissionIcon"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+    <TextView android:layout_width="match_parent"
+              android:textColor="@color/primary"
+              android:id="@+id/txtRequired"
+              android:layout_marginTop="10dp"
+              android:layout_toEndOf="@+id/permisssionText"
+              android:layout_height="wrap_content"/>
+
+    <TextView
+            android:layout_marginBottom="10dp"
+            android:text="jkdjfkjdfkjkdjf"
+            android:textColor="@color/divider"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_toEndOf="@+id/permissionIcon"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/permisssionText"
+            android:layout_width="wrap_content"
+            android:id="@+id/permissionDetails"
+            android:layout_height="wrap_content"/>
+</RelativeLayout>

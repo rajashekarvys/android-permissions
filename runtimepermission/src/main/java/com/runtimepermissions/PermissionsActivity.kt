@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
+import kotlinx.android.synthetic.main.fragment_permissions_request_dailog.*
 import java.util.*
 
 class PermissionsActivity : Activity() {
@@ -21,8 +22,12 @@ class PermissionsActivity : Activity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setFinishOnTouchOutside(false)
+        window.statusBarColor = 0
         _mPermissions = intent.getStringArrayExtra(PermissionsManager.PERMISSIONS)
         permissionCallBack = intent.getSerializableExtra(PermissionsManager.CALLBACK) as PermissionCallBack
+
+        permissionList.adapter
 
 
         for (permission in _mPermissions) {
