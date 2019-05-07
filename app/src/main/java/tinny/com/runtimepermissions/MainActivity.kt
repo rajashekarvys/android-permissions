@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity(), OnConfirmListener {
         val pd = PermissionsRequestDialog.Builder(this).apply {
             setAppIcon(resources.getDrawable(R.mipmap.ic_launcher))
             setTitleDescription("Following permissions are used in Demo App")
+            setSuggestion("We required above permissions to serve you better.")
             addNeedsItemList(items)
         }
         pd.build().setOnConfirmListener(this)

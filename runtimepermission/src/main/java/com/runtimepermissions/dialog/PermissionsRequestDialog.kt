@@ -20,36 +20,40 @@ class PermissionsRequestDialog(activity: AppCompatActivity, var builder: Builder
 
     private var view: View
     private var builderPro: Builder
-
+    var dialog:AlertDialog
     init {
         builderPro = builder
         view = activity.layoutInflater.inflate(R.layout.fragment_permissions_request_dailog, null).apply {
             appIcon.setImageDrawable(builderPro.appIcon)
             titleDescription.text = builderPro.titleDescription
+            txtSuggestion.text = builderPro.suggestion
 
             permissionList.adapter = PermissionsAdapter(contextNew = activity, listItems = builderPro.itemsList)
 
         }
         val width = (activity.resources.displayMetrics.widthPixels * 0.95).toInt()
-        var height :Int
-        if (builderPro.itemsList.size < 3)
-            height = (activity.resources.displayMetrics.heightPixels * 0.60).toInt()
-        else
-            height = (activity.resources.displayMetrics.heightPixels * 0.80).toInt()
 
-        AlertDialog.Builder(activity)
+        val height = if (builderPro.itemsList.size < 3)
+            (activity.resources.displayMetrics.heightPixels * 0.60).toInt()
+        else
+            (activity.resources.displayMetrics.heightPixels * 0.80).toInt()
+
+        dialog = AlertDialog.Builder(activity)
             .create().apply {
                 setView(view)
                 requestWindowFeature(Window.FEATURE_NO_TITLE)
                 setCanceledOnTouchOutside(true)
                 show()
-                window.setLayout(width, height)
+                window!!.setLayout(width, height)
 
             }
     }
 
     fun setOnConfirmListener(onConfirmListener: OnConfirmListener) {
-        view.btn.setOnClickListener { onConfirmListener.onConfirm() }
+        view.btn.setOnClickListener {
+            onConfirmListener.onConfirm()
+            dialog.dismiss()
+        }
     }
 
 
