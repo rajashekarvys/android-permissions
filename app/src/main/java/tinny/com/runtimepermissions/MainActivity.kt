@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity(), OnConfirmListener {
         setContentView(R.layout.activity_main)
         val items = ArrayList<DialogItem>()
 
+
         items.add(DialogItem(resources.getDrawable(R.mipmap.ic_launcher),title = "SMS",description = "Need this permission for read SMS",require = "required"))
         items.add(DialogItem(resources.getDrawable(R.mipmap.ic_launcher),title = "Contacts",description = "Need this permission for read SMS",require = "required"))
         items.add(DialogItem(resources.getDrawable(R.mipmap.ic_launcher),title = "Location",description = "Need this permission for read SMS",require = "optional"))
