@@ -10,7 +10,7 @@ object PermissionsManager {
     const val PERMISSIONS = "pr"
     const val CALLBACK = "cb"
 
-    internal
+
 
     fun askPermissions(context: Context, permission: String, callBack: PermissionCallBack) {
         validatePermissions(context, arrayOf(permission), callBack)
