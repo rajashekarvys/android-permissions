@@ -19,6 +19,7 @@ class PermissionsAdapter(var contextNew: Context, var listItems: ArrayList<Dialo
         }
 
 
+
         view!!.permissionIcon.setImageDrawable(listItems[position].icon)
         view!!.permisssionText.text = listItems[position].title
         view!!.permissionDetails.text = listItems[position].description
