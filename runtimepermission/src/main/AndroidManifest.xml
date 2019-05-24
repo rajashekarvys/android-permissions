@@ -5,5 +5,6 @@
         <activity android:name="com.runtimepermissions.PermissionsActivity"
         android:theme="@style/TransparentTheme"/>
     </application>
+
 </manifest>
 

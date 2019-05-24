@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.fragment_permissions_request_dailog.view.*
 class PermissionsRequestDialog(activity: AppCompatActivity, var builder: Builder) {
 
 
+
     private var view: View
     private var builderPro: Builder
     var dialog:AlertDialog

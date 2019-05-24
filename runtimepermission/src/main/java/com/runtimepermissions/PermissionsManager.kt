@@ -16,6 +16,7 @@ object PermissionsManager {
         validatePermissions(context, arrayOf(permission), callBack)
     }
 
+
     fun askPermissions(context: Context, permissions: Array<String>, callBack: PermissionCallBack) {
         validatePermissions(context, permissions, callBack)
     }

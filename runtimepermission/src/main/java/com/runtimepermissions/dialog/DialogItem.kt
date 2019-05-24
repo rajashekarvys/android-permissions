@@ -8,4 +8,5 @@ data class DialogItem(
   val title: String = "",
   val require: String = "",
   val description: String = ""
+
 )

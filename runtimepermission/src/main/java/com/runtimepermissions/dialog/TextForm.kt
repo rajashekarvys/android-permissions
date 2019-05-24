@@ -33,6 +33,7 @@ fun textForm(context: Context, block: TextForm.Builder.() -> Unit): TextForm =
  */
 class TextForm(builder: Builder) {
 
+
   val textSize = builder.textSize
   val textColor = builder.textColor
   val textStyle = builder.textStyle

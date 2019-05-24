@@ -19,6 +19,7 @@ class PermissionsActivity : Activity() {
     private val PERMISSON_CODE = 123
     private lateinit var permissionCallBack: PermissionCallBack
 
+
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
