@@ -10,7 +10,6 @@ import java.util.*
 
 class PermissionsActivity : Activity() {
 
-
     private lateinit var _mPermissions: Array<String>
     private val _mAcceptedPermissions = ArrayList<String>()
     private val _mDeniedPermissions = ArrayList<String>()
@@ -27,9 +26,6 @@ class PermissionsActivity : Activity() {
         window.statusBarColor = 0
         _mPermissions = intent.getStringArrayExtra(PermissionsManager.PERMISSIONS)
         permissionCallBack = intent.getSerializableExtra(PermissionsManager.CALLBACK) as PermissionCallBack
-
-        permissionList.adapter
-
 
         for (permission in _mPermissions) {
             if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
