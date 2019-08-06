@@ -10,6 +10,7 @@ object PermissionsManager {
     const val PERMISSIONS = "pr"
     const val CALLBACK = "cb"
     lateinit var callBack: PermissionCallBack
+    var allPermissionGranted = false
 
     fun askPermissions(context: Context, permission: String, callBack: PermissionCallBack) {
         validatePermissions(context, arrayOf(permission), callBack)
@@ -25,13 +26,16 @@ object PermissionsManager {
             callBack.onAccepted(permissions.toCollection(ArrayList()))
         } else {
             for (permission in permissions) {
+                allPermissionGranted =true
                 if (context.checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
+                    allPermissionGranted =false
                     this.callBack = callBack
                     startPermissionActivity(context, permissions)
                     break
-                }else{
-                    callBack.onAccepted(permissions.toCollection(ArrayList()))
                 }
+            }
+            if (allPermissionGranted){
+                callBack.onAccepted(permissions.toCollection(ArrayList()))
             }
         }
     }
