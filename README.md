@@ -65,3 +65,5 @@ override fun onAccepted(list: ArrayList<String>) {
         }
     }
 ```
+
+Note: Below 5.0 always onAccepted call back will be given for all permissions.
