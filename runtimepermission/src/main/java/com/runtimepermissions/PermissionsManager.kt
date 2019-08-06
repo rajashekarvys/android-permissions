@@ -29,6 +29,8 @@ object PermissionsManager {
                     this.callBack = callBack
                     startPermissionActivity(context, permissions)
                     break
+                }else{
+                    callBack.onAccepted(permissions.toCollection(ArrayList()))
                 }
             }
         }
