@@ -9,6 +9,7 @@ object PermissionsManager {
 
     const val PERMISSIONS = "pr"
     const val CALLBACK = "cb"
+    lateinit var callBack: PermissionCallBack
 
 
 
@@ -27,17 +28,17 @@ object PermissionsManager {
         } else {
             for (permission in permissions) {
                 if (context.checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
-                    startPermissionActivity(context, permissions, callBack)
+                    this.callBack = callBack
+                    startPermissionActivity(context, permissions)
                     break
                 }
             }
         }
     }
 
-    private fun startPermissionActivity(context: Context, permissions: Array<String>, callBack: PermissionCallBack) {
+    private fun startPermissionActivity(context: Context, permissions: Array<String>) {
         val intent = Intent(context, PermissionsActivity::class.java)
         intent.putExtra(PERMISSIONS, permissions)
-        intent.putExtra(CALLBACK, callBack)
         context.startActivity(intent)
     }
 

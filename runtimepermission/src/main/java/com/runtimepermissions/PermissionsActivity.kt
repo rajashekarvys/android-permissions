@@ -25,7 +25,7 @@ class PermissionsActivity : Activity() {
         setFinishOnTouchOutside(false)
         window.statusBarColor = 0
         _mPermissions = intent.getStringArrayExtra(PermissionsManager.PERMISSIONS)
-        permissionCallBack = intent.getSerializableExtra(PermissionsManager.CALLBACK) as PermissionCallBack
+        permissionCallBack = PermissionsManager.callBack
 
         for (permission in _mPermissions) {
             if (checkSelfPermission(permission) != PackageManager.PERMISSION_GRANTED) {
