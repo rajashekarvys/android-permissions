@@ -11,8 +11,6 @@ object PermissionsManager {
     const val CALLBACK = "cb"
     lateinit var callBack: PermissionCallBack
 
-
-
     fun askPermissions(context: Context, permission: String, callBack: PermissionCallBack) {
         validatePermissions(context, arrayOf(permission), callBack)
     }
