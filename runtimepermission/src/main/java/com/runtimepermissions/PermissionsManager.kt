@@ -21,6 +21,10 @@ object PermissionsManager {
         validatePermissions(context, permissions, callBack)
     }
 
+    fun askPermissions(context: Context, permissions: ArrayList<String>, callBack: PermissionCallBack) {
+        validatePermissions(context, permissions.toArray() as Array<String>, callBack)
+    }
+
     private fun validatePermissions(context: Context, permissions: Array<String>, callBack: PermissionCallBack) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             callBack.onAccepted(permissions.toCollection(ArrayList()))
