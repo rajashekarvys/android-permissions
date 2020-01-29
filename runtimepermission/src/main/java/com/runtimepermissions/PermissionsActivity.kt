@@ -72,7 +72,7 @@ class PermissionsActivity : Activity() {
 
     private fun checkNeverAskPermission(permission: String): Boolean {
         return try {
-            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 shouldShowRequestPermissionRationale(permission)
             } else {
                 false

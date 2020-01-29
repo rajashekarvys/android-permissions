@@ -47,6 +47,7 @@ object PermissionsManager {
     private fun startPermissionActivity(context: Context, permissions: Array<String>) {
         val intent = Intent(context, PermissionsActivity::class.java)
         intent.putExtra(PERMISSIONS, permissions)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
         context.startActivity(intent)
     }
 
